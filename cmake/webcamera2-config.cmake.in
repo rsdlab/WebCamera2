@@ -1,0 +1,54 @@
+# WebCamera2 CMake config file
+#
+# This file sets the following variables:
+# WebCamera2_FOUND - Always TRUE.
+# WebCamera2_INCLUDE_DIRS - Directories containing the WebCamera2 include files.
+# WebCamera2_IDL_DIRS - Directories containing the WebCamera2 IDL files.
+# WebCamera2_LIBRARIES - Libraries needed to use WebCamera2.
+# WebCamera2_DEFINITIONS - Compiler flags for WebCamera2.
+# WebCamera2_VERSION - The version of WebCamera2 found.
+# WebCamera2_VERSION_MAJOR - The major version of WebCamera2 found.
+# WebCamera2_VERSION_MINOR - The minor version of WebCamera2 found.
+# WebCamera2_VERSION_REVISION - The revision version of WebCamera2 found.
+# WebCamera2_VERSION_CANDIDATE - The candidate version of WebCamera2 found.
+
+message(STATUS "Found WebCamera2-@PROJECT_VERSION@")
+set(WebCamera2_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(WebCamera2_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(WebCamera2_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(WebCamera2_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(WebCamera2_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(WebCamera2_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(WebCamera2_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(WebCamera2_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(WebCamera2_VERSION @PROJECT_VERSION@)
+set(WebCamera2_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(WebCamera2_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(WebCamera2_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(WebCamera2_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+
