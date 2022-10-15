@@ -31,7 +31,7 @@ static const char* webcamera2_spec[] =
     // Configuration variables
     "conf.default.camera_id", "0",
     "conf.default.output_color_format", "RGB",
-    "conf.default.camera_param_filename", "..\\..\\camera.yml",
+    "conf.default.camera_param_filename", "camera.yml",
     "conf.default.undistortion_flag", "false",
     "conf.default.cap_continuous_flag", "true",
     "conf.default.compression_ratio", "75",
@@ -110,7 +110,7 @@ RTC::ReturnCode_t WebCamera2::onInitialize()
   // Bind variables and configuration variable
   bindParameter("camera_id", m_camera_id, "0");
   bindParameter("output_color_format", m_output_color_format, "RGB");
-  bindParameter("camera_param_filename", m_camera_param_filename, "..\\..\\camera.yml");
+  bindParameter("camera_param_filename", m_camera_param_filename, "camera.yml");
   bindParameter("undistortion_flag", m_undistortion_flag, "false");
   bindParameter("cap_continuous_flag", m_cap_continuous_flag, "true");
   bindParameter("compression_ratio", m_compression_ratio, "75");
