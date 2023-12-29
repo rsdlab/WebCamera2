@@ -20,7 +20,7 @@ static const char* webcamera2_spec[] =
     "implementation_id", "WebCamera2Test",
     "type_name",         "WebCamera2Test",
     "description",       "Web Camera RTC with common camera interface version 2.0 for RTM2.0",
-    "version",           "1.0.0",
+    "version",           "2.0.0",
     "vendor",            "Kenichi Ohara, Meijo University",
     "category",          "ImageProcessing",
     "activity_type",     "PERIODIC",
@@ -37,6 +37,14 @@ static const char* webcamera2_spec[] =
     "conf.default.compression_ratio", "75",
     "conf.default.frame_width", "640",
     "conf.default.frame_height", "480",
+    "conf.default.auto_exposure", "0",
+    "conf.default.auto_focus", "false",
+    "conf.default.auto_white_balance", "false",
+    "conf.default.exposure_param", "4.0",
+    "conf.default.brightness_param", "128.0",
+    "conf.default.contrast_param", "128.0",
+    "conf.default.saturation_param", "128",
+    "conf.default.focus_param", "30",
 
     // Widget
     "conf.__widget__.camera_id", "text",
@@ -47,11 +55,22 @@ static const char* webcamera2_spec[] =
     "conf.__widget__.compression_ratio", "slider.1",
     "conf.__widget__.frame_width", "text",
     "conf.__widget__.frame_height", "text",
+    "conf.__widget__.auto_exposure", "text",
+    "conf.__widget__.auto_focus", "text",
+    "conf.__widget__.auto_white_balance", "text",
+    "conf.__widget__.exposure_param", "text",
+    "conf.__widget__.brightness_param", "text",
+    "conf.__widget__.contrast_param", "text",
+    "conf.__widget__.saturation_param", "text",
+    "conf.__widget__.focus_param", "slider",
     // Constraints
     "conf.__constraints__.output_color_format", "(RGB,GRAY,JPEG,PNG)",
     "conf.__constraints__.undistortion_flag", "(true,false)",
     "conf.__constraints__.cap_continuous_flag", "(true,false)",
     "conf.__constraints__.compression_ratio", "0<=x<=100",
+    "conf.__constraints__.auto_exposure", "(true,false)",
+    "conf.__constraints__.auto_focus", "(true,false)",
+    "conf.__constraints__.auto_white_balance", "(true,false)",
 
     "conf.__type__.camera_id", "int",
     "conf.__type__.output_color_format", "string",
@@ -61,6 +80,14 @@ static const char* webcamera2_spec[] =
     "conf.__type__.compression_ratio", "int",
     "conf.__type__.frame_width", "int",
     "conf.__type__.frame_height", "int",
+    "conf.__type__.auto_exposure", "double",
+    "conf.__type__.auto_focus", "string",
+    "conf.__type__.auto_white_balance", "string",
+    "conf.__type__.exposure_param", "double",
+    "conf.__type__.brightness_param", "int",
+    "conf.__type__.contrast_param", "int",
+    "conf.__type__.saturation_param", "int",
+    "conf.__type__.focus_param", "int",
 
     ""
   };
@@ -118,6 +145,14 @@ RTC::ReturnCode_t WebCamera2Test::onInitialize()
   bindParameter("compression_ratio", m_compression_ratio, "75");
   bindParameter("frame_width", m_frame_width, "640");
   bindParameter("frame_height", m_frame_height, "480");
+  bindParameter("auto_exposure", m_auto_exposure, "0");
+  bindParameter("auto_focus", m_auto_focus, "false");
+  bindParameter("auto_white_balance", m_auto_white_balance, "false");
+  bindParameter("exposure_param", m_exposure_param, "4.0");
+  bindParameter("brightness_param", m_brightness_param, "128.0");
+  bindParameter("contrast_param", m_contrast_param, "128.0");
+  bindParameter("saturation_param", m_saturation_param, "128");
+  bindParameter("focus_param", m_focus_param, "30");
   // </rtc-template>
   
   return RTC::RTC_OK;

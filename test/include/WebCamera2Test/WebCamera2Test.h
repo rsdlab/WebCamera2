@@ -263,6 +263,54 @@ class WebCamera2Test
    * - DefaultValue: 480
    */
   int m_frame_height;
+  /*!
+   * 
+   * - Name:  auto_exposure
+   * - DefaultValue: 0
+   */
+  double m_auto_exposure;
+  /*!
+   * 
+   * - Name:  auto_focus
+   * - DefaultValue: false
+   */
+  std::string m_auto_focus;
+  /*!
+   * 
+   * - Name:  auto_white_balance
+   * - DefaultValue: false
+   */
+  std::string m_auto_white_balance;
+  /*!
+   * 
+   * - Name:  exposure_param
+   * - DefaultValue: 4.0
+   */
+  double m_exposure_param;
+  /*!
+   * 
+   * - Name:  brightness_param
+   * - DefaultValue: 128.0
+   */
+  int m_brightness_param;
+  /*!
+   * 
+   * - Name:  contrast_param
+   * - DefaultValue: 128.0
+   */
+  int m_contrast_param;
+  /*!
+   * 
+   * - Name:  saturation_param
+   * - DefaultValue: 128
+   */
+  int m_saturation_param;
+  /*!
+   * 
+   * - Name:  focus_param
+   * - DefaultValue: 30
+   */
+  int m_focus_param;
 
   // </rtc-template>
 

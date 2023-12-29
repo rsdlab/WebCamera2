@@ -22,7 +22,7 @@ Web Camera RTC with common camera interface version 2.0 for RTM2.0
 ----|---- 
 | Module Name | WebCamera2 |
 | Description | Web Camera RTC with common camera interface version 2.0 for RTM2.0 |
-| Version | 1.0.0 |
+| Version | 2.0.0 |
 | Vendor | Kenichi Ohara, Meijo University |
 | Category | ImageProcessing |
 | Comp. Type | STATIC |
@@ -537,6 +537,318 @@ This parameter can control the compression ratio for JPEG and PNG color format.
   <tr>
     <td>Widget</td>
     <td colspan="2">text</td>
+  </tr>
+  <tr>
+    <td>Step</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td>Constraint</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Range</td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+
+#### auto_exposure
+
+
+
+
+<table>
+  <tr>
+    <td>DataType</td>
+    <td colspan="2">double</td>
+  </tr>
+  <tr>
+    <td>DefaultValue</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Unit</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td colspan="2">text</td>
+  </tr>
+  <tr>
+    <td>Step</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td>Constraint</td>
+    <td>(true,false)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Range</td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+
+#### auto_focus
+
+
+
+
+<table>
+  <tr>
+    <td>DataType</td>
+    <td colspan="2">string</td>
+  </tr>
+  <tr>
+    <td>DefaultValue</td>
+    <td>false</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Unit</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td colspan="2">text</td>
+  </tr>
+  <tr>
+    <td>Step</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td>Constraint</td>
+    <td>(true,false)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Range</td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+
+#### auto_white_balance
+
+
+
+
+<table>
+  <tr>
+    <td>DataType</td>
+    <td colspan="2">string</td>
+  </tr>
+  <tr>
+    <td>DefaultValue</td>
+    <td>false</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Unit</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td colspan="2">text</td>
+  </tr>
+  <tr>
+    <td>Step</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td>Constraint</td>
+    <td>(true,false)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Range</td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+
+#### exposure_param
+
+
+
+
+<table>
+  <tr>
+    <td>DataType</td>
+    <td colspan="2">double</td>
+  </tr>
+  <tr>
+    <td>DefaultValue</td>
+    <td>4.0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Unit</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td colspan="2">text</td>
+  </tr>
+  <tr>
+    <td>Step</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td>Constraint</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Range</td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+
+#### brightness_param
+
+
+
+
+<table>
+  <tr>
+    <td>DataType</td>
+    <td colspan="2">int</td>
+  </tr>
+  <tr>
+    <td>DefaultValue</td>
+    <td>128.0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Unit</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td colspan="2">text</td>
+  </tr>
+  <tr>
+    <td>Step</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td>Constraint</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Range</td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+
+#### contrast_param
+
+
+
+
+<table>
+  <tr>
+    <td>DataType</td>
+    <td colspan="2">int</td>
+  </tr>
+  <tr>
+    <td>DefaultValue</td>
+    <td>128.0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Unit</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td colspan="2">text</td>
+  </tr>
+  <tr>
+    <td>Step</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td>Constraint</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Range</td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+
+#### saturation_param
+
+
+
+
+<table>
+  <tr>
+    <td>DataType</td>
+    <td colspan="2">int</td>
+  </tr>
+  <tr>
+    <td>DefaultValue</td>
+    <td>128</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Unit</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td colspan="2">text</td>
+  </tr>
+  <tr>
+    <td>Step</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td>Constraint</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Range</td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+
+#### focus_param
+
+
+
+
+<table>
+  <tr>
+    <td>DataType</td>
+    <td colspan="2">int</td>
+  </tr>
+  <tr>
+    <td>DefaultValue</td>
+    <td>30</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Unit</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Widget</td>
+    <td colspan="2">slider</td>
   </tr>
   <tr>
     <td>Step</td>

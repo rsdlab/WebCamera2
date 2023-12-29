@@ -12,13 +12,12 @@
  */
 Img_CameraCaptureServiceSVC_impl::Img_CameraCaptureServiceSVC_impl()
 {
-  // Please add extra constructor code here.
+  m_cap_continuous = false;
+  m_cap_count = 0;
 }
-
 
 Img_CameraCaptureServiceSVC_impl::~Img_CameraCaptureServiceSVC_impl()
 {
-  // Please add extra destructor code here.
 }
 
 
@@ -47,7 +46,6 @@ void Img_CameraCaptureServiceSVC_impl::stop_continuous()
 
 void Img_CameraCaptureServiceSVC_impl::getProfile(Img::CameraDeviceProfile_out profile)
 {
-  std::cout << "The method has not been implemented!" << std::endl;
 }
 
 

@@ -9,7 +9,6 @@
 
 #ifndef WEBCAMERA2_H
 #define WEBCAMERA2_H
-#include<iostream>
 
 #include <rtm/idl/BasicDataTypeSkel.h>
 #include <rtm/idl/ExtendedDataTypesSkel.h>
@@ -39,10 +38,10 @@
 //Structure definition for common camera interface
 typedef struct CameraParam_ 
 {
-	cv::Size	imageSize;
-	cv::Mat		cameraMatrix;
-	cv::Mat		distCoeffs;
-	cv::Mat		map1, map2;
+  cv::Size	imageSize;
+  cv::Mat		cameraMatrix;
+  cv::Mat		distCoeffs;
+  cv::Mat		map1, map2;
 }CameraParam;
 
 // <rtc-template block="component_description">
@@ -55,286 +54,330 @@ typedef struct CameraParam_
 class WebCamera2
   : public RTC::DataFlowComponentBase
 {
- public:
-  /*!
-   * @brief constructor
-   * @param manager Maneger Object
-   */
-  WebCamera2(RTC::Manager* manager);
+  public:
+    /*!
+     * @brief constructor
+     * @param manager Maneger Object
+     */
+    WebCamera2(RTC::Manager* manager);
 
-  /*!
-   * @brief destructor
-   */
-  ~WebCamera2() override;
+    /*!
+     * @brief destructor
+     */
+    ~WebCamera2() override;
 
-  // <rtc-template block="public_attribute">
+    // <rtc-template block="public_attribute">
   
-  // </rtc-template>
+    // </rtc-template>
 
-  // <rtc-template block="public_operation">
+    // <rtc-template block="public_operation">
   
-  // </rtc-template>
+    // </rtc-template>
 
-  // <rtc-template block="activity">
-  /***
-   *
-   * The initialize action (on CREATED->ALIVE transition)
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-   RTC::ReturnCode_t onInitialize() override;
+    // <rtc-template block="activity">
+    /***
+     *
+     * The initialize action (on CREATED->ALIVE transition)
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+     */
+    RTC::ReturnCode_t onInitialize() override;
 
-  /***
-   *
-   * The finalize action (on ALIVE->END transition)
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-  // RTC::ReturnCode_t onFinalize() override;
+    /***
+     *
+     * The finalize action (on ALIVE->END transition)
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+     */
+    // RTC::ReturnCode_t onFinalize() override;
 
-  /***
-   *
-   * The startup action when ExecutionContext startup
-   *
-   * @param ec_id target ExecutionContext Id
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-  // RTC::ReturnCode_t onStartup(RTC::UniqueId ec_id) override;
+    /***
+     *
+     * The startup action when ExecutionContext startup
+     *
+     * @param ec_id target ExecutionContext Id
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+     */
+    // RTC::ReturnCode_t onStartup(RTC::UniqueId ec_id) override;
 
-  /***
-   *
-   * The shutdown action when ExecutionContext stop
-   *
-   * @param ec_id target ExecutionContext Id
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-  // RTC::ReturnCode_t onShutdown(RTC::UniqueId ec_id) override;
+    /***
+     *
+     * The shutdown action when ExecutionContext stop
+     *
+     * @param ec_id target ExecutionContext Id
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+     */
+    // RTC::ReturnCode_t onShutdown(RTC::UniqueId ec_id) override;
 
-  /***
-   *
-   * The activated action (Active state entry action)
-   *
-   * @param ec_id target ExecutionContext Id
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-   RTC::ReturnCode_t onActivated(RTC::UniqueId ec_id) override;
+    /***
+     *
+     * The activated action (Active state entry action)
+     *
+     * @param ec_id target ExecutionContext Id
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+     */
+    RTC::ReturnCode_t onActivated(RTC::UniqueId ec_id) override;
 
-  /***
-   *
-   * The deactivated action (Active state exit action)
-   *
-   * @param ec_id target ExecutionContext Id
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-   RTC::ReturnCode_t onDeactivated(RTC::UniqueId ec_id) override;
+    /***
+     *
+     * The deactivated action (Active state exit action)
+     *
+     * @param ec_id target ExecutionContext Id
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+     */
+    RTC::ReturnCode_t onDeactivated(RTC::UniqueId ec_id) override;
 
-  /***
-   *
-   * The execution action that is invoked periodically
-   *
-   * @param ec_id target ExecutionContext Id
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-   RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id) override;
+    /***
+     *
+     * The execution action that is invoked periodically
+     *
+     * @param ec_id target ExecutionContext Id
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+    */
+    RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id) override;
 
-  /***
-   *
-   * The aborting action when main logic error occurred.
-   *
-   * @param ec_id target ExecutionContext Id
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-   RTC::ReturnCode_t onAborting(RTC::UniqueId ec_id) override;
+    /***
+     *
+     * The aborting action when main logic error occurred.
+     *
+     * @param ec_id target ExecutionContext Id
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+    */
+    RTC::ReturnCode_t onAborting(RTC::UniqueId ec_id) override;
 
-  /***
-   *
-   * The error action in ERROR state
-   *
-   * @param ec_id target ExecutionContext Id
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-  // RTC::ReturnCode_t onError(RTC::UniqueId ec_id) override;
+    /***
+     *
+     * The error action in ERROR state
+     *
+     * @param ec_id target ExecutionContext Id
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+     */
+    // RTC::ReturnCode_t onError(RTC::UniqueId ec_id) override;
 
-  /***
-   *
-   * The reset action that is invoked resetting
-   *
-   * @param ec_id target ExecutionContext Id
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-  // RTC::ReturnCode_t onReset(RTC::UniqueId ec_id) override;
+    /***
+     *
+     * The reset action that is invoked resetting
+     *
+     * @param ec_id target ExecutionContext Id
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+     */
+    // RTC::ReturnCode_t onReset(RTC::UniqueId ec_id) override;
   
-  /***
-   *
-   * The state update action that is invoked after onExecute() action
-   *
-   * @param ec_id target ExecutionContext Id
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-  // RTC::ReturnCode_t onStateUpdate(RTC::UniqueId ec_id) override;
+    /***
+     *
+     * The state update action that is invoked after onExecute() action
+     *
+     * @param ec_id target ExecutionContext Id
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+    */
+    // RTC::ReturnCode_t onStateUpdate(RTC::UniqueId ec_id) override;
 
-  /***
-   *
-   * The action that is invoked when execution context's rate is changed
-   *
-   * @param ec_id target ExecutionContext Id
-   *
-   * @return RTC::ReturnCode_t
-   * 
-   * 
-   */
-  // RTC::ReturnCode_t onRateChanged(RTC::UniqueId ec_id) override;
-  // </rtc-template>
+    /***
+     *
+     * The action that is invoked when execution context's rate is changed
+     *
+     * @param ec_id target ExecutionContext Id
+     *
+     * @return RTC::ReturnCode_t
+     * 
+     * 
+    */
+    // RTC::ReturnCode_t onRateChanged(RTC::UniqueId ec_id) override;
+    // </rtc-template>
 
 
- protected:
-  // <rtc-template block="protected_attribute">
+  protected:
+    // <rtc-template block="protected_attribute">
   
-  // </rtc-template>
+    // </rtc-template>
 
-  // <rtc-template block="protected_operation">
+    // <rtc-template block="protected_operation">
   
-  // </rtc-template>
+    // </rtc-template>
 
-  // Configuration variable declaration
-  // <rtc-template block="config_declare">
-  /*!
-   * 
-   * - Name:  camera_id
-   * - DefaultValue: 0
-   */
-  int m_camera_id;
-  /*!
-   * 
-   * - Name:  output_color_format
-   * - DefaultValue: RGB
-   */
-  std::string m_output_color_format;
-  /*!
-   * 
-   * - Name:  camera_param_filename
-   * - DefaultValue: ..\..\camera.yml
-   */
-  std::string m_camera_param_filename;
-  /*!
-   * 
-   * - Name:  undistortion_flag
-   * - DefaultValue: false
-   */
-  std::string m_undistortion_flag;
-  /*!
-   * 
-   * - Name:  cap_continuous_flag
-   * - DefaultValue: false
-   */
-  std::string m_cap_continuous_flag;
-  /*!
-   * This parameter can control the compression ratio for JPEG
-   * and PNG color format.
-   * - Name:  compression_ratio
-   * - DefaultValue: 75
-   */
-  int m_compression_ratio;
-  /*!
-   * 
-   * - Name:  frame_width
-   * - DefaultValue: 640
-   */
-  int m_frame_width;
-  /*!
-   * 
-   * - Name:  frame_height
-   * - DefaultValue: 480
-   */
-  int m_frame_height;
+    // Configuration variable declaration
+    // <rtc-template block="config_declare">
+    /*!
+     * 
+     * - Name:  camera_id
+     * - DefaultValue: 0
+     */
+    int m_camera_id;
+    /*!
+     * 
+     * - Name:  output_color_format
+     * - DefaultValue: RGB
+     */
+    std::string m_output_color_format;
+    /*!
+     * 
+     * - Name:  camera_param_filename
+     * - DefaultValue: ..\..\camera.yml
+     */
+    std::string m_camera_param_filename;
+    /*!
+     * 
+     * - Name:  undistortion_flag
+     * - DefaultValue: false
+    */
+    std::string m_undistortion_flag;
+    /*!
+     * 
+     * - Name:  cap_continuous_flag
+     * - DefaultValue: false
+    */
+    std::string m_cap_continuous_flag;
+    /*!
+     * This parameter can control the compression ratio for JPEG
+     * and PNG color format.
+     * - Name:  compression_ratio
+     * - DefaultValue: 75
+    */
+    int m_compression_ratio;
+    /*!
+     * 
+     * - Name:  frame_width
+     * - DefaultValue: 640
+    */
+    int m_frame_width;
+    /*!
+     * 
+     * - Name:  frame_height
+     * - DefaultValue: 480
+    */
+    int m_frame_height;
+    /*!
+     * 
+     * - Name:  auto_exposure
+     * - DefaultValue: 0
+    */
+    double m_auto_exposure;
+    /*!
+     * 
+     * - Name:  auto_focus
+     * - DefaultValue: false
+    */
+    std::string m_auto_focus;
+    /*!
+     * 
+     * - Name:  auto_white_balance
+     * - DefaultValue: false
+    */
+    std::string m_auto_white_balance;
+    /*!
+     * 
+     * - Name:  exposure_param
+     * - DefaultValue: 4.0
+    */
+    double m_exposure_param;
+    /*!
+     * 
+     * - Name:  brightness_param
+     * - DefaultValue: 128.0
+    */
+    int m_brightness_param;
+    /*!
+     * 
+     * - Name:  contrast_param
+     * - DefaultValue: 128.0
+    */
+    int m_contrast_param;
+    /*!
+     * 
+     * - Name:  saturation_param
+     * - DefaultValue: 128
+    */
+    int m_saturation_param;
+    /*!
+     * 
+     * - Name:  focus_param
+     * - DefaultValue: 30
+    */
+    int m_focus_param;
 
-  // </rtc-template>
+    // </rtc-template>
 
-  // DataInPort declaration
-  // <rtc-template block="inport_declare">
+    // DataInPort declaration
+    // <rtc-template block="inport_declare">
   
-  // </rtc-template>
+    // </rtc-template>
 
 
-  // DataOutPort declaration
-  // <rtc-template block="outport_declare">
-  Img::TimedCameraImage m_CameraImage;
-  /*!
-   */
-  RTC::OutPort<Img::TimedCameraImage> m_CameraImageOut;
+    // DataOutPort declaration
+    // <rtc-template block="outport_declare">
+    Img::TimedCameraImage m_CameraImage;
+    /*!
+     */
+    RTC::OutPort<Img::TimedCameraImage> m_CameraImageOut;
   
-  // </rtc-template>
+    // </rtc-template>
 
-  // CORBA Port declaration
-  // <rtc-template block="corbaport_declare">
-  /*!
-   */
-  RTC::CorbaPort m_CameraCaptureServicePort;
+    // CORBA Port declaration
+    // <rtc-template block="corbaport_declare">
+    /*!
+     */
+    RTC::CorbaPort m_CameraCaptureServicePort;
   
-  // </rtc-template>
+    // </rtc-template>
 
-  // Service declaration
-  // <rtc-template block="service_declare">
-  /*!
-   */
-  Img_CameraCaptureServiceSVC_impl m_CameraCaptureService;
+    // Service declaration
+    // <rtc-template block="service_declare">
+    /*!
+     */
+    Img_CameraCaptureServiceSVC_impl m_CameraCaptureService;
   
-  // </rtc-template>
+    // </rtc-template>
 
-  // Consumer declaration
-  // <rtc-template block="consumer_declare">
+    // Consumer declaration
+    // <rtc-template block="consumer_declare">
   
-  // </rtc-template>
+    // </rtc-template>
 
 
- private:
-  // <rtc-template block="private_attribute">
+  private:
+    // <rtc-template block="private_attribute">
   
-  // </rtc-template>
+    // </rtc-template>
 
-  // <rtc-template block="private_operation">
+    // <rtc-template block="private_operation">
   
-  // </rtc-template>
-  cv::VideoCapture cam_cap;
-  cv::Mat src_image;
-  cv::Mat proc_image;
-  int width;
-  int height;
-  int depth;
-  int nchannels;
-  CameraParam cam_param;
-  bool isFileLoad;
+    // </rtc-template>
+    cv::VideoCapture cam_cap;
+    cv::Mat src_image, proc_image;
+    int width, height, depth, nchannels;
+    CameraParam cam_param;
+    bool isFileLoad;
 };
 
 

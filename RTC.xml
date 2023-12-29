@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<rtc:RtcProfile rtc:version="0.3" rtc:id="RTC:Kenichi Ohara, Meijo University:ImageProcessing:WebCamera2:1.0.0" xmlns:rtc="http://www.openrtp.org/namespaces/rtc" xmlns:rtcExt="http://www.openrtp.org/namespaces/rtc_ext" xmlns:rtcDoc="http://www.openrtp.org/namespaces/rtc_doc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <rtc:BasicInfo xsi:type="rtcExt:basic_info_ext" rtcExt:saveProject="WebCamera2" rtc:updateDate="2019-07-24T06:20:58.000+09:00" rtc:creationDate="2012-08-08T10:45:12.000+09:00" rtc:version="1.0.0" rtc:vendor="Kenichi Ohara, Meijo University" rtc:maxInstances="1" rtc:executionType="PeriodicExecutionContext" rtc:executionRate="30.0" rtc:description="Web Camera RTC with common camera interface version 2.0 for RTM2.0" rtc:category="ImageProcessing" rtc:componentKind="DataFlowComponent" rtc:activityType="PERIODIC" rtc:componentType="STATIC" rtc:name="WebCamera2">
+<rtc:RtcProfile rtc:version="0.3" rtc:id="RTC:Kenichi Ohara, Meijo University:ImageProcessing:WebCamera2:2.0.0" xmlns:rtc="http://www.openrtp.org/namespaces/rtc" xmlns:rtcExt="http://www.openrtp.org/namespaces/rtc_ext" xmlns:rtcDoc="http://www.openrtp.org/namespaces/rtc_doc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <rtc:BasicInfo xsi:type="rtcExt:basic_info_ext" rtcExt:saveProject="WebCamera2" rtc:updateDate="2019-07-24T06:20:58.000+09:00" rtc:creationDate="2012-08-08T10:45:12.000+09:00" rtc:version="2.0.0" rtc:vendor="Kenichi Ohara, Meijo University" rtc:maxInstances="1" rtc:executionType="PeriodicExecutionContext" rtc:executionRate="30.0" rtc:description="Web Camera RTC with common camera interface version 2.0 for RTM2.0" rtc:category="ImageProcessing" rtc:componentKind="DataFlowComponent" rtc:activityType="PERIODIC" rtc:componentType="STATIC" rtc:name="WebCamera2">
         <rtcExt:VersionUpLogs></rtcExt:VersionUpLogs>
         <rtcExt:VersionUpLogs></rtcExt:VersionUpLogs>
         <rtcExt:VersionUpLogs></rtcExt:VersionUpLogs>
         <rtcExt:VersionUpLogs></rtcExt:VersionUpLogs>
         <rtcExt:VersionUpLogs></rtcExt:VersionUpLogs>
+        <rtcExt:Properties rtcExt:value="false" rtcExt:name="FSM"/>
+        <rtcExt:Properties rtcExt:value="StaticFSM" rtcExt:name="FSMType"/>
     </rtc:BasicInfo>
     <rtc:Actions>
         <rtc:OnInitialize xsi:type="rtcDoc:action_status_doc" rtc:implemented="true"/>
@@ -62,10 +64,10 @@
             </rtc:Constraint>
             <rtcExt:Properties rtcExt:value="radio" rtcExt:name="__widget__"/>
         </rtc:Configuration>
-        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="..\..\camera.yml" rtc:type="string" rtc:name="camera_param_filename">
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="camera.yml" rtc:type="string" rtc:name="camera_param_filename">
             <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
         </rtc:Configuration>
-        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="false" rtc:type="string" rtc:name="undistortion_flag">
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="true" rtc:type="string" rtc:name="undistortion_flag">
             <rtc:Constraint>
                 <rtc:ConstraintUnitType>
                     <rtc:Or>
@@ -88,7 +90,7 @@
             </rtc:Constraint>
             <rtcExt:Properties rtcExt:value="radio" rtcExt:name="__widget__"/>
         </rtc:Configuration>
-        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="false" rtc:type="string" rtc:name="cap_continuous_flag">
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="true" rtc:type="string" rtc:name="cap_continuous_flag">
             <rtc:Constraint>
                 <rtc:ConstraintUnitType>
                     <rtc:Or>
@@ -128,6 +130,70 @@
         </rtc:Configuration>
         <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="480" rtc:type="int" rtc:name="frame_height">
             <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="1" rtc:type="double" rtc:name="auto_exposure">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="false" rtc:type="string" rtc:name="auto_focus">
+            <rtc:Constraint>
+                <rtc:ConstraintUnitType>
+                    <rtc:Or>
+                        <rtc:Constraint>
+                            <rtc:ConstraintUnitType>
+                                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                                    <rtc:Literal>true</rtc:Literal>
+                                </rtc:propertyIsEqualTo>
+                            </rtc:ConstraintUnitType>
+                        </rtc:Constraint>
+                        <rtc:Constraint>
+                            <rtc:ConstraintUnitType>
+                                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                                    <rtc:Literal>false</rtc:Literal>
+                                </rtc:propertyIsEqualTo>
+                            </rtc:ConstraintUnitType>
+                        </rtc:Constraint>
+                    </rtc:Or>
+                </rtc:ConstraintUnitType>
+            </rtc:Constraint>
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="false" rtc:type="string" rtc:name="auto_white_balance">
+            <rtc:Constraint>
+                <rtc:ConstraintUnitType>
+                    <rtc:Or>
+                        <rtc:Constraint>
+                            <rtc:ConstraintUnitType>
+                                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                                    <rtc:Literal>true</rtc:Literal>
+                                </rtc:propertyIsEqualTo>
+                            </rtc:ConstraintUnitType>
+                        </rtc:Constraint>
+                        <rtc:Constraint>
+                            <rtc:ConstraintUnitType>
+                                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                                    <rtc:Literal>false</rtc:Literal>
+                                </rtc:propertyIsEqualTo>
+                            </rtc:ConstraintUnitType>
+                        </rtc:Constraint>
+                    </rtc:Or>
+                </rtc:ConstraintUnitType>
+            </rtc:Constraint>
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="4.0" rtc:type="double" rtc:name="exposure_param">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="128.0" rtc:type="int" rtc:name="brightness_param">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="128.0" rtc:type="int" rtc:name="contrast_param">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="128" rtc:type="int" rtc:name="saturation_param">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="" rtc:unit="" rtc:defaultValue="30" rtc:type="int" rtc:name="focus_param">
+            <rtcExt:Properties rtcExt:value="slider." rtcExt:name="__widget__"/>
         </rtc:Configuration>
     </rtc:ConfigurationSet>
     <rtc:DataPorts xsi:type="rtcExt:dataport_ext" rtcExt:position="RIGHT" rtcExt:variableName="" rtc:unit="" rtc:subscriptionType="" rtc:dataflowType="" rtc:interfaceType="" rtc:idlFile="&lt;RTM_ROOT&gt;/rtm/idl/CameraCommonInterface.idl" rtc:type="Img::TimedCameraImage" rtc:name="CameraImage" rtc:portType="DataOutPort"/>
